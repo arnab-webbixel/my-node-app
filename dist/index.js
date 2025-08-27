@@ -8,7 +8,7 @@ const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
 // GET /hello
 app.get("/", (req, res) => {
-    res.send("Hello from nodeApp");
+    res.send("Hello from nodeApp from vps");
 });
 // GET /health
 app.get("/health", (req, res) => {
