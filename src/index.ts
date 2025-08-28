@@ -27,7 +27,7 @@ app.use((req: Request, res: Response, next) => {
 
 // GET /hello
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello from nodeApp from vps");
+  res.send("Hello from nodeApp infront of sakib");
 
 });
 
