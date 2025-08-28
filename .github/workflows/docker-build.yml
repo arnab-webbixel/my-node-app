@@ -31,7 +31,7 @@ jobs:
       - name: Push Docker image
         run: |
           docker push arnabvais/my-node-app:latest
-       # 5. Deploy to remote server via SSH
+          # 5. Deploy to remote server via SSH
       - name: Deploy on server
         uses: appleboy/ssh-action@v0.1.10
         with:
@@ -41,7 +41,8 @@ jobs:
 
           # key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-             cd ~/nodeApp || git clone https://github.com/arnab-webbixel/my-node-app.git ~/nodeApp
-             cd ~/nodeApp  
-             git pull origin main
-             docker-compose up -d
+            docker pull arnabvais/my-node-app:latest
+            docker stop my-node-app || true
+            docker rm my-node-app || true
+            docker run -d -p 5000:3000 --name my-node-app arnabvais/my-node-app:latest
+  
