@@ -41,6 +41,7 @@ jobs:
 
           # key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-             cd ~/nodeApp  # path to repo on server
+             cd ~/nodeApp || git clone https://github.com/arnab-webbixel/my-node-app.git ~/nodeApp
+             cd ~/nodeApp  
              git pull origin main
              docker-compose up -d
