@@ -51,5 +51,5 @@ jobs:
          STATUS="Success"
           if [ "${{ job.status }}" != "success" ]; then STATUS="Failed"; fi
           curl -X POST -H 'Content-type: application/json' \
-          --data "{\"text\":\"GitHub Actions Workflow: $STATUS\nRepository: ${{ github.repository }}\nBranch: ${{ github.ref }}\nCommit: ${{ github.sha }}\"}" \
+          --data "{\"text\":\"GitHub Actions Workflow: $STATUS\nRepository: ${{ github.repository }}\nBranch: ${{ github.ref }}\nCommit: ${{ github.sha }}\nMessage: ${{ github.event.head_commit.message }}\nAuthor: ${{ github.event.head_commit.author.name }}\"}" \
           ${{ secrets.SLACK_WEBHOOK_URL }}
