@@ -25,6 +25,11 @@ app.use((req: Request, res: Response, next) => {
   next();
 });
 
+app.get("/metrics", async (req: Request, res: Response) => {
+  res.set("Content-Type", register.contentType);
+  res.end(await register.metrics());
+});
+
 // GET /hello
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello debanjan ");
