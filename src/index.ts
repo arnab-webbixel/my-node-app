@@ -57,7 +57,7 @@ app.get("/metrics", async (req: Request, res: Response) => {
 // Test endpoints
 // ----------------------
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello Rahul");
+  res.send("Hello jENKIS");
 });
 
 app.get("/health", (req: Request, res: Response) => {
