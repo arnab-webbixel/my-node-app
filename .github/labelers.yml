@@ -1,0 +1,24 @@
+nodejs:
+  - 'src/**'
+  - 'package.json'
+  - 'package-lock.json'
+  - 'yarn.lock'
+
+typescript:
+  - 'src/**/*.ts'
+  - 'tsconfig.json'
+
+docker:
+  - 'Dockerfile'
+  - 'docker-compose.yml'
+  - 'dockerfiles/**'
+
+ci:
+  - '.github/workflows/**'
+
+prometheus:
+  - 'prometheus.yml'
+
+docs:
+  - 'README.md'
+  - 'docs/**'
